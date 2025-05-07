@@ -1,0 +1,25 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Hub - Upload Notes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ 
+    
+    <div class="container">
+        <h2>Upload Your Notes</h2>
+        <form id="uploadForm" action="upload.php" method="POST" enctype="multipart/form-data">
+            <input type="text" name="title" placeholder="Title" required>
+            <input type="file" name="file" accept="application/pdf" required>
+            <button type="submit">Upload</button>
+        </form>
+        <a href="new.html">Goto index page</a>
+        <br><br>
+        <a href="view_documents.php">View My Notes</a>
+    </div>
+</body>
+</html>

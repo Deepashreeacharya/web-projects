@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Himalayan Jewels</title>
+    <style>
+        body{
+            background-image: url(n4.jpg);  
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+       
+        #login{
+            position: relative;
+            width: 330px;
+            height: 320px;
+            border: 1px solid black;
+            background: transparent;
+            padding: 30px;
+            background: rgba(0,0,0,.5);
+            transform: translate(145%,25%);
+            border-radius: 102px;
+           
+        }
+        #login:hover{
+            box-shadow: 0px 0px  10px rgb(255, 89, 0),0px 0px  25px rgb(20, 0, 27),0px 0px  50px rgb(3, 5, 5),0px 0px  100px rgb(0, 0, 5),0px 0px 20px rgb(255, 0, 13);
+        }
+        h2{
+            font-size:35px;
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            background-image:linear-gradient(45deg,rgb(15, 173, 241),rgb(246, 21, 130));
+            border-radius: 10px;
+            transform: translate(15%,-45%);
+            color: rgb(12, 12, 12);
+            
+
+        }
+        #username{
+            transform: translate(20%,-40%);
+            width: 80%;
+            height: 12%;
+            padding: 10px;
+            font-size: 19px;
+            border-color: black;
+            background-color: gray;
+            font-family: 'Times New Roman', Times, serif;
+            cursor:pointer;
+            border-radius: 11px;
+        }
+
+        #password{
+            transform: translate(20%,10%);
+            width: 80%;
+            height: 12%;
+            font-size: 19px;
+            padding: 10px;
+            font-family: 'Times New Roman', Times, serif;
+            border-color: black;
+            background-color: gray;
+            cursor:pointer;
+            border-radius: 11px;
+
+        }
+
+        input[type=button]{
+            transform: translate(65%,150%);
+            width: 40%;
+            height: 11%;
+            background-image:linear-gradient(45deg,rgb(15, 173, 241),rgb(246, 21, 130));
+            text-align: center;
+            color:rgb(10, 9, 9);
+            border-radius: 5px;
+            border-width: 2px;
+            font-size: 19px;
+            font-weight: bold;
+
+        }
+        ::placeholder{
+            color:rgb(0, 8, 13);
+            font-family:'Times New Roman', Times, serif;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #t6:hover{
+        box-shadow: 10px 10px 50px cyan;
+        }
+   
+
+        p{
+               color:rgb(252, 252, 245);     
+               }
+        a{
+            color:rgb(231, 74, 2);
+            
+               }
+    </style></head>
+<body>
+    <!-- Login Section -->
+    <div id="login">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" name="username" placeholder="Enter the Username">
+            <br>
+            <input type="password" id="password" name="password" placeholder="Enter the Password" required>
+            <br>
+            <input type="button" value="Login" id="t6" onclick="login()">
+        </form>
+        <br>
+        &nbsp;&nbsp;&nbsp;<p id="p">Don't have an account? <a href="signup.html">Sign up here</a>.</p>
+    </div>
+
+    <script>
+        function login(){
+            var t3=document.getElementById('username').value;
+            var t4=document.getElementById('password').value;
+
+            var getemail=localStorage.getItem('useremail');
+            var getpassword=localStorage.getItem('userpas');
+
+            if(t3==getemail && t4==getpassword){
+                window.location.assign("new.html");
+            }
+            else{
+                alert("Invalid username or password");
+            }
+        }
+    
+    </script>
+</body>
+</html>

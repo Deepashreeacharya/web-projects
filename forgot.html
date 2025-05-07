@@ -1,0 +1,185 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-image: url(n4.jpg);  
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+                background-size: cover;                
+            }
+            #forgot{
+                width: 400px;
+                height: 350px;
+                background: transparent;
+                border-color: black;
+                border: 1px solid black;
+                padding: 20px;
+                padding-left: 10px;
+                background: rgba(0,0,0,.5);
+                transform: translate(125%,25%);
+                border-radius: 90px;
+               
+                
+            }
+            h2{
+                transform: translate(12%,-25%);
+                font-size:25px;
+                background-image: linear-gradient(rgb(27, 144, 186),rgb(255, 0, 247),pink);
+                width: 235px;
+                height: 7%;
+                border-radius: 20px;
+                padding: 10px;
+                font-weight: bold;
+                color: white;
+            
+                
+            }
+            #t3{
+                transform: translate(18%,0%);
+                width: 75%;
+                height: 12%;
+                font-size: 20px;
+                background:transparent;
+                color:rgb(244, 242, 242);
+                border-color: rgb(13, 13, 13);
+                padding: 10px;
+                background-color: gray;
+                cursor:pointer;
+            }
+            #t4{
+                transform: translate(18%,40%);
+                width: 75%;
+                height: 12%;
+                font-size: 20px;
+                background:transparent;
+                color:rgb(246, 245, 245);
+                border-color: rgb(4, 4, 4);
+                padding: 10px;
+                cursor:pointer;
+                background-color: gray;
+            }
+            #t5{
+                transform: translate(18%,80%);
+                width: 75%;
+                height: 12%;
+                font-size: 20px;
+                background:transparent;
+                color:rgb(248, 248, 248);
+                border-color: rgb(3, 3, 3);
+                padding: 10px;
+                background-color: gray;
+                cursor:pointer;
+            }
+            #t6{
+                transform: translate(100%,190%);
+                width: 30%;
+                height: 12%;
+                font-size: 18px;
+                background-image: linear-gradient(rgb(27, 144, 186),rgb(255, 0, 247),pink);
+                font-weight: bold;
+                letter-spacing: 1px;
+                cursor:pointer;
+                color: white;
+            }
+            ::placeholder{
+                color:rgb(235, 239, 242);
+                font-family:'Times New Roman', Times, serif;
+                font-weight: bold;
+                padding: 5px;
+            }
+            #forgot:hover{
+                box-shadow: 0px 0px  10px rgb(255, 89, 0),0px 0px  25px rgb(20, 0, 27),0px 0px  50px rgb(3, 5, 5),0px 0px  100px rgb(0, 0, 5),0px 0px 20px rgb(255, 0, 13);
+            }
+            #t6:hover{
+                box-shadow: 10px 10px 50px cyan;
+            }
+            .eye-icon {
+                position: absolute;
+                transform: translate(2%,30%);
+                right: 75px;   
+                padding: 10px;
+                cursor: pointer;
+                font-size: 20px;
+                user-select: none; /* Prevent text selection */
+            }
+           
+
+        </style>
+        <script>
+           
+            function save(){
+                var t3=document.getElementById('t3').value;
+                var t4=document.getElementById('t4').value;
+                var t5=document.getElementById('t5').value;
+                var getemail=localStorage.getItem('useremail');
+                if(getemail!=t3){
+                    alert("Username Not Found");
+                    document.getElementById("t3").value="";
+
+                }
+                else{
+                
+    
+                if(t3=='' && t3=='' && t5=='')
+                {
+                    alert("Enter Username and Password Field")
+                }
+                else if(t3==''){
+                        alert('Enter the Username');
+                    }
+                else if(t4=='' ||t5==''){
+                        alert('Enter the Password Field');
+                    }
+                 else if(t4!=t5){
+                    alert('Password and Confirm Password not Same');
+                    document.getElementById("t5").value="";
+
+                }
+
+                else{
+                var email=document.getElementById("t3").value;
+                var p1=document.getElementById("t4").value;
+                var p2=document.getElementById("t5").value;
+
+
+            localStorage.setItem('useremail',email);
+            localStorage.setItem('userpas',p1)
+
+
+            localStorage.useremail=email;
+            localStorage.userpas=p1;
+
+
+
+            if (p1.toUpperCase()===p2.toUpperCase())
+            {
+                window.location.assign("login.html");
+            }
+            else{
+                alert("Enter same Password");
+            }
+        }
+    }
+    }
+         
+
+
+
+
+        </script>
+    </head>
+    <body>
+        <form id="f2">
+        <div id="forgot">
+            <h2>Forgot Password?</h2>
+            <input type="text" placeholder="Enter the Username" id="t3" autofocus required>
+            <input type="password" placeholder="Enter the  New Password" id="t4" autofocus required>
+            <span id="toggle-password" class="eye-icon">🙈</span>
+            <input type="password" placeholder="Enter the Confirm Password" id="t5" autofocus required >
+            <input type="button" value="Save" id="t6" onclick="save()" >
+        </div>
+        </form>
+        <script src="script.js"></script> 
+    </body>
+</html>
